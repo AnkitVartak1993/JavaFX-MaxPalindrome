@@ -10,6 +10,9 @@ import javafx.scene.text.Text;
 import javafx.scene.control.TextField; 
 import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 
 public class MaxPalindrome extends Application {
 
@@ -63,13 +66,35 @@ public class MaxPalindrome extends Application {
 	    stage.setScene(scene);
 	    stage.show(); 
 	    button1.setOnAction((ActionEvent e) -> {
-	    	System.out.println("worked");
+	    	
+	    	// Storing user inputs in strings
+	    	String txt1 = textField1.getText().toString();
+	    	String txt2 = textField2.getText().toString();
+	    	
+	    	boolean numValid= checkInput(txt1, txt2);
+	    	
 	    });
 	    
 	    
 	}
 	
+	public boolean checkInput(String txt1, String txt2)
+	{
+		boolean f1=     txt1.matches("[0-9]+");
+		boolean f2=     txt2.matches("[0-9]+");
+		giveWarning("Warning");
+		return true;
+	}
 	
+	public void giveWarning(String msg)
+	{
+		Alert alert = new Alert(AlertType.INFORMATION);
+	       alert.setTitle("Wrong Input");
+	       alert.setHeaderText("Wrong Input Warning");
+	       alert.setContentText(msg);
+	       alert.showAndWait();
+		
+	}
 	
 	
 	
