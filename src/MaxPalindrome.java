@@ -70,8 +70,20 @@ public class MaxPalindrome extends Application {
 	    	// Storing user inputs in strings
 	    	String txt1 = textField1.getText().toString();
 	    	String txt2 = textField2.getText().toString();
-	    	
+	    	int lowNum ;
+	    	int highNum;
 	    	boolean numValid= checkInput(txt1, txt2);
+	    	if (numValid)
+    	    {
+    	    	lowNum =Integer.parseInt(txt1);
+    	    	    highNum = Integer.parseInt(txt2);
+    	    	     System.out.println(maxPalFinal);
+    	    	    result.setText("Result : "+ MaxPal(lowNum,highNum) );
+    	    	    
+    	    }
+	    	
+	    	
+	    	
 	    	
 	    });
 	    
@@ -115,7 +127,41 @@ public class MaxPalindrome extends Application {
 	       alert.showAndWait();
 		
 	}
-	
+	public String MaxPal(int num1 , int num2)
+	   {
+		int maxPal = 0;
+		  
+		   
+		   
+	       int sum , temp , rem;
+	   for(int i=num1;i<=num2;i++)
+		{
+			   sum=0;
+			   temp=i;
+			
+			while(temp>0)
+			{
+				
+				rem=temp%10;
+				temp=temp/10;
+				sum=(sum*10)+rem;
+			}
+			
+			if(i==sum)
+			{
+				maxPal = i;
+			}
+		
+	   
+		  
+	   
+	   }
+	   
+	   if (maxPal==0)
+		   return "Not Found!";
+	   else
+	   return Integer.toString(maxPal);
+	   }
 	
 	
 	
