@@ -1,0 +1,13 @@
+Steps to Run MaxPalindrome.jar
+
+Just double click on the MaxPalindrome.jar file to run it if you alreday have jdk.
+
+Once it starts give minimum and maximum bounds of number and press search button to find the largest palindrome between that range.
+
+
+-----------------------------------------------------------------------------------------------
+MaxPalindrom.java file is available in src folder
+
+It can be run as a normal java file.
+
+-------------------------------------------------------------------------------------------------
