@@ -82,8 +82,28 @@ public class MaxPalindrome extends Application {
 	{
 		boolean f1=     txt1.matches("[0-9]+");
 		boolean f2=     txt2.matches("[0-9]+");
-		giveWarning("Warning");
-		return true;
+		if (! (f1 && f2 ))
+		 { 
+			
+            giveWarning("Please make sure to enter only natural numbers!");
+          	f1 = false;	 
+
+		 }
+		if( (txt1.length()<10 && txt2.length()<10 ) &&  ( Double.parseDouble(txt1) <= 2147483647  &&    Double.parseDouble(txt2) <=2147483647   ))
+		 {
+		     if (Double.parseDouble(txt1)>Double.parseDouble(txt2))
+		     {
+		    	 f1= false;
+		    	 giveWarning( "Please make sure That lower bound is less than Max Bound!");
+		     }
+
+		 }
+		else {
+			 f1= false;
+		 giveWarning("Number shouldn't be greater than 2147483647");
+		 
+		 }
+		return f1;
 	}
 	
 	public void giveWarning(String msg)
