@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Text; 
 import javafx.scene.control.TextField; 
 import javafx.scene.control.Button;
-
+import javafx.event.ActionEvent;
 
 public class MaxPalindrome extends Application {
 
@@ -62,6 +62,11 @@ public class MaxPalindrome extends Application {
 	    
 	    stage.setScene(scene);
 	    stage.show(); 
+	    button1.setOnAction((ActionEvent e) -> {
+	    	System.out.println("worked");
+	    });
+	    
+	    
 	}
 	
 	
