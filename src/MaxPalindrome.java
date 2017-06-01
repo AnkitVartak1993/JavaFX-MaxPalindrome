@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text; 
 import javafx.scene.control.TextField; 
-
+import javafx.scene.control.Button;
 
 
 public class MaxPalindrome extends Application {
@@ -25,7 +25,7 @@ public class MaxPalindrome extends Application {
 		Text text2 = new Text("Maximum number");
 		TextField textField1 = new TextField();
 		TextField textField2 = new TextField();  
-		
+		Button button1 = new Button("Search Maximum Palindrome"); 
 		
 		
 		
@@ -53,7 +53,10 @@ public class MaxPalindrome extends Application {
 	    gridPane.add(text1, 0, 1); 
 	    gridPane.add(textField1, 1, 1); 
 	    gridPane.add(text2, 0, 2);       
-	    gridPane.add(textField2, 1, 2); 
+	    gridPane.add(textField2, 1, 2);
+	    gridPane.add(button1, 1, 3); 
+	    
+	    
 	    Scene scene = new Scene(gridPane); 
 	    stage.setTitle("Maximum Palindrome");
 	    
