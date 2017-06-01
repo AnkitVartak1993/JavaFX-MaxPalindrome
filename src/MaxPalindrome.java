@@ -22,29 +22,16 @@ public class MaxPalindrome extends Application {
 		//creating labels and input fields
 		String maxPalFinal="Result : ";
 		Label result = new Label( maxPalFinal);
-		
-		
 		Text text1 = new Text("Minimum number");
 		Text text2 = new Text("Maximum number");
 		TextField textField1 = new TextField();
 		TextField textField2 = new TextField();  
+		
+		// creating button
 		Button button1 = new Button("Search Maximum Palindrome"); 
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// Configuring Gridpane
 		GridPane gridPane = new GridPane();
 		gridPane.setMinSize(500, 500);
 	    gridPane.setPadding(new Insets(10, 10, 10, 10)); 
@@ -59,12 +46,19 @@ public class MaxPalindrome extends Application {
 	    gridPane.add(textField2, 1, 2);
 	    gridPane.add(button1, 1, 3); 
 	    
-	    
+	    //Creating scene object
 	    Scene scene = new Scene(gridPane); 
+	    
+	    //giving name to stage
 	    stage.setTitle("Maximum Palindrome");
 	    
+	    //Adding scene to the stage
 	    stage.setScene(scene);
+	    
+	    //Displaying contents of stage
 	    stage.show(); 
+	    
+	    //Button event on pressing search button by User
 	    button1.setOnAction((ActionEvent e) -> {
 	    	
 	    	// Storing user inputs in strings
@@ -72,12 +66,18 @@ public class MaxPalindrome extends Application {
 	    	String txt2 = textField2.getText().toString();
 	    	int lowNum ;
 	    	int highNum;
+	    	
+	    	//checkInput method to check if both the inputs are correct
 	    	boolean numValid= checkInput(txt1, txt2);
+	    	
+	    	//if both inputs are correct then calling MaxPal
 	    	if (numValid)
     	    {
     	    	lowNum =Integer.parseInt(txt1);
     	    	    highNum = Integer.parseInt(txt2);
     	    	     System.out.println(maxPalFinal);
+    	    	     
+    	    	     //Setting result label to the final answer.
     	    	    result.setText("Result : "+ MaxPal(lowNum,highNum) );
     	    	    
     	    }
@@ -89,7 +89,7 @@ public class MaxPalindrome extends Application {
 	    
 	    
 	}
-	
+	//input validation checker method
 	public boolean checkInput(String txt1, String txt2)
 	{
 		boolean f1=     txt1.matches("[0-9]+");
@@ -118,6 +118,7 @@ public class MaxPalindrome extends Application {
 		return f1;
 	}
 	
+	//Alert generator method
 	public void giveWarning(String msg)
 	{
 		Alert alert = new Alert(AlertType.INFORMATION);
@@ -127,6 +128,8 @@ public class MaxPalindrome extends Application {
 	       alert.showAndWait();
 		
 	}
+	
+	//Method to calculate maximum palindrome in given range
 	public String MaxPal(int num1 , int num2)
 	   {
 		int maxPal = 0;
@@ -139,29 +142,26 @@ public class MaxPalindrome extends Application {
 			   sum=0;
 			   temp=i;
 			
-			while(temp>0)
-			{
+			   		while(temp>0)
+			   		{
 				
-				rem=temp%10;
-				temp=temp/10;
-				sum=(sum*10)+rem;
-			}
+			   			rem=temp%10;
+			   			temp=temp/10;
+			   			sum=(sum*10)+rem;
+			   		}
 			
-			if(i==sum)
-			{
-				maxPal = i;
-			}
+			   		if(i==sum)
+			   		{
+			   			maxPal = i;
+			   		}
 		
-	   
-		  
-	   
 	   }
 	   
 	   if (maxPal==0)
 		   return "Not Found!";
 	   else
 	   return Integer.toString(maxPal);
-	   }
+	  }
 	
 	
 	
